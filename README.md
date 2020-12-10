@@ -11,7 +11,8 @@ Objective-C
 Clone 代码，把 ZWHCollectionViewFlowWaterfallLayout 文件夹拖入项目，#import "ZWHCollectionViewFlowWaterfallLayout" 就可以使用了。
 
 使用：
-用法基本同UICollectionViewFlowLayout
+用法基本同UICollectionViewFlowLayout。
+
 阅读演示代码和 ZWHCollectionViewFlowWaterfallLayout.h头文件以获取更多信息。
 
 下面列出了可用于自定义布局的属性:
