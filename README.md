@@ -15,13 +15,10 @@ Clone 代码，把 ZWHCollectionViewFlowWaterfallLayout 文件夹拖入项目，
 
 使用：
 
-用法基本同UICollectionViewFlowLayout。
-阅读演示代码和 ZWHCollectionViewFlowWaterfallLayout.h头文件以获取更多信息。
+用法基本同UICollectionViewFlowLayout。阅读演示代码和 ZWHCollectionViewFlowWaterfallLayout.h头文件以获取更多信息。
 
 下面列出了可用于自定义布局的属性:
 
 @property (nonatomic, assign) NSInteger columnCount;//列数 默认2
 
-//设置不同section的显示列数
-
--(NSInteger)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout columnNumberAtSection:(NSInteger )section;
+-(NSInteger)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout columnNumberAtSection:(NSInteger )section;//设置不同section的显示列数
