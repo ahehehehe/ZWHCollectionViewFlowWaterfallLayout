@@ -6,9 +6,11 @@ iOS 9.0+
 Xcode 9+
 Objective-C
 
+
 安装：
 手动
 Clone 代码，把 ZWHCollectionViewFlowWaterfallLayout 文件夹拖入项目，#import "ZWHCollectionViewFlowWaterfallLayout" 就可以使用了。
+
 
 使用：
 用法基本同UICollectionViewFlowLayout。
@@ -19,4 +21,5 @@ Clone 代码，把 ZWHCollectionViewFlowWaterfallLayout 文件夹拖入项目，
 @property (nonatomic, assign) NSInteger columnCount;
 
 //设置不同section的显示列数
+
 -(NSInteger)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout columnNumberAtSection:(NSInteger )section;
