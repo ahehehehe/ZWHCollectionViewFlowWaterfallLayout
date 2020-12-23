@@ -1,5 +1,5 @@
 # ZWHCollectionViewFlowWaterfallLayout
-CollectionView瀑布流+悬停布局(参考了CHTCollectionViewWaterfallLayout）
+CollectionViewshu竖排瀑布流+悬停布局(参考了CHTCollectionViewWaterfallLayout）
 
 要求：
 iOS 9.0+
