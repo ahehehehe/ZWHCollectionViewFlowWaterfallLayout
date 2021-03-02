@@ -237,7 +237,7 @@
 // - 这个数组中存放的都是UICollectionViewLayoutAttributes对象
 // - UICollectionViewLayoutAttributes对象决定了cell的排布方式（frame等）
 - (NSArray<__kindof UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect{
-    
+    NSArray * arr = [super layoutAttributesForElementsInRect:rect];
     NSMutableArray<UICollectionViewLayoutAttributes *> *layoutAttributesArray = [NSMutableArray array];
     [self.attributesHeaderArray enumerateObjectsUsingBlock:^(UICollectionViewLayoutAttributes * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if (CGRectIntersectsRect(obj.frame, rect)) {
@@ -270,7 +270,11 @@
         }
     }];
     if (self.sectionHeadersPinToVisibleBounds) {
-        
+        [arr enumerateObjectsUsingBlock:^(UICollectionViewLayoutAttributes * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            if ([obj.representedElementKind isEqualToString:UICollectionElementKindSectionHeader]) {
+                [layoutAttributesArray addObject:obj];
+            }
+        }];
         //再从里面删除所有UICollectionElementKindSectionHeader类型的cell
         [layoutAttributesArray enumerateObjectsUsingBlock:^(UICollectionViewLayoutAttributes * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             if ([obj.representedElementKind isEqualToString:UICollectionElementKindSectionHeader]) {
@@ -290,7 +294,11 @@
     }
     
     if (self.sectionFootersPinToVisibleBounds) {
-        
+        [arr enumerateObjectsUsingBlock:^(UICollectionViewLayoutAttributes * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            if ([obj.representedElementKind isEqualToString:UICollectionElementKindSectionFooter]) {
+                [layoutAttributesArray addObject:obj];
+            }
+        }];
         //再从里面删除所有UICollectionElementKindSectionFooter类型的cell
         [layoutAttributesArray enumerateObjectsUsingBlock:^(UICollectionViewLayoutAttributes * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             if ([obj.representedElementKind isEqualToString:UICollectionElementKindSectionFooter]) {
