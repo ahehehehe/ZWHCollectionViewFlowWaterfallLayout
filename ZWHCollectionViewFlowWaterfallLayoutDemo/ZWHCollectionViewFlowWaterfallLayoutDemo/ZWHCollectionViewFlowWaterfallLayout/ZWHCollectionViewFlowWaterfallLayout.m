@@ -413,11 +413,11 @@
 - (UICollectionViewLayoutAttributes *)layoutAttributesForSupplementaryViewOfKind:(NSString *)elementKind atIndexPath:(NSIndexPath *)indexPath{
     UICollectionViewLayoutAttributes *attribute = nil;
     if ([elementKind isEqualToString:UICollectionElementKindSectionHeader]) {
-        if (self.attributesHeaderArray.count>0) {
+        if (indexPath.section <self.attributesHeaderArray.count) {
             attribute = self.attributesHeaderArray[indexPath.section];
         }
     } else if ([elementKind isEqualToString:UICollectionElementKindSectionFooter]) {
-        if (self.attributesFooterArray.count>0) {
+        if (indexPath.section <self.attributesFooterArray.count) {
             attribute = self.attributesFooterArray[indexPath.section];
         }
     }
